@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Training Session</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of training" button >
+      <ion-thumbnail slot="start" (click)="trainingDetail(item.id,item.images,item.title,item.cdate,item.des,item.link)">
+        <img  src="{{item.images}}">
+      </ion-thumbnail>
+      <ion-label (click)="trainingDetail(item.id,item.images,item.title,item.cdate,item.des,item.link)">
+        <h3 size="smaller">{{item.title}}</h3>
+        <p>{{item.cdate}}</p>
+      </ion-label>
+      <ion-button vertical="bottom" horizontal="end" color="{{item.color}}" slot="end" style="z-index: 9999;"   (click)="lessonStatus($event,item.id,item.activityTStatus)" >{{item.activityTStatus}}</ion-button>
+      <ion-icon  slot="end"></ion-icon>
+    </ion-item>
+    </ion-list>
+</ion-content>

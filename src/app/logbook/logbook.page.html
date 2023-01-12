@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Log Book</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset>  
+    <ion-list-header>Select Date</ion-list-header>  
+    <ion-item class="b" button  *ngFor="let item of logbook_date;let i = index" (click)="logDetail(item.id)">
+   
+      <ion-label>   {{item.cdate}}</ion-label> 
+
+    </ion-item>  
+  </ion-list> 
+</ion-content>

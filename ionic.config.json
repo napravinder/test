@@ -1,0 +1,7 @@
+{
+  "name": "newbao",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

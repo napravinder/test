@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Gallery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col
+      size="6"
+      *ngFor="let img of images; let i = index;"
+      class="ion-text-center"
+    >
+      <ion-label>
+
+        <p>{{ img.created | date:'short' }}</p>
+      </ion-label>
+ 
+      <img style="width:100%;height:110px;border-radius: 15px;" src="https://baobabsports.com/baosport/gallery_images/{{img.image}}" />
+      <ion-fab  vertical="bottom" horizontal="end">
+        <ion-fab-button style="width: 20px; height:20px;"
+          color="danger"
+          size="small"
+          (click)="deleteImage(img, i)"
+        >
+          <ion-icon style="width: 10px; "  name="trash-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-col>
+  </ion-row>
+ 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <input
+      type="file"
+      #fileInput
+      
+      hidden="true"
+      accept="image/*"
+    />
+    <ion-fab-button (click)="selectImageSource()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

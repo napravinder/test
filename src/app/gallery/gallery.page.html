@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>gallery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col
+      size="6"
+      *ngFor="let img of images; let i = index;"
+      class="ion-text-center"
+    >
+      <img  (click)="openPreview(img.image)" style="width:100%;height:110px;" src="https://baobabsports.com/baosport/gallery_images/{{img.image}}" />
+    </ion-col>
+  </ion-row>
+</ion-content>

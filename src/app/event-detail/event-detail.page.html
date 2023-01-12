@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Upcoming Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p class="text-center">{{title}}</p>
+        <span >{{cdate}}</span>
+    
+        <video controls="controls" preload="metadata"  controlsList="nodownload" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+          <source src="{{link}}" type="video/mp4" />
+         </video>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img *ngIf="event" src="https://baobabsports.com/baosport/eventimages/{{images}}">
+        <img *ngIf="my" src="{{images}}">
+        <p>{{des}}</p>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+</ion-content>
